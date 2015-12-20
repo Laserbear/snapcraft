@@ -110,4 +110,4 @@ deb http://ports.ubuntu.com/ubuntu-ports trusty-security multiverse
                 self.assertEqual(
                     stat.S_IMODE(os.stat(file).st_mode), files[key][1])
     def test_not_install_recommends(self):
-        self.assertEqual(apt.apt_pkg.config['Apt::Install-Recommends'], False)
+        self.assertFalse(['Apt::Install-Recommends'])
